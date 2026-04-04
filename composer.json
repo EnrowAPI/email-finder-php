@@ -1,0 +1,36 @@
+{
+    "name": "enrow/email-finder",
+    "description": "Find verified professional email addresses from a name and company. Email discovery, lead generation, and sales prospecting API wrapper for Enrow.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "email-finder",
+        "email-discovery",
+        "email-lookup",
+        "lead-generation",
+        "sales-prospecting",
+        "email-verification",
+        "enrow",
+        "b2b",
+        "crm"
+    ],
+    "require": {
+        "php": ">=8.1",
+        "guzzlehttp/guzzle": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "EmailFinder\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Enrow",
+            "homepage": "https://enrow.io"
+        }
+    ],
+    "homepage": "https://github.com/enrow/email-finder-php",
+    "support": {
+        "docs": "https://docs.enrow.io"
+    }
+}

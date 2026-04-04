@@ -43,11 +43,13 @@ class EmailFinder
      *
      * @param string $apiKey Your Enrow API key.
      * @param array $params {
-     *     @type string $fullName      Full name of the person (required).
-     *     @type string $companyDomain Company domain (e.g. "apple.com").
-     *     @type string $companyName   Company name (e.g. "Apple Inc.").
-     *     @type string $countryCode   ISO country code to narrow results.
-     *     @type string $webhook       Webhook URL for async notification.
+     *     @type string $fullName        Full name of the person (required).
+     *     @type string $companyDomain   Company domain (e.g. "apple.com").
+     *     @type string $companyName     Company name (e.g. "Apple Inc.").
+     *     @type array  $custom          Custom data to attach to the result.
+     *     @type string $countryCode     ISO country code to narrow results.
+     *     @type bool   $retrieveGender  Whether to retrieve gender information.
+     *     @type string $webhook         Webhook URL for async notification.
      * }
      * @return array Search result containing an id to poll with get().
      */
@@ -61,10 +63,16 @@ class EmailFinder
         if (!empty($params['companyName'])) {
             $body['company_name'] = $params['companyName'];
         }
+        if (!empty($params['custom'])) {
+            $body['custom'] = $params['custom'];
+        }
 
         $settings = [];
         if (!empty($params['countryCode'])) {
             $settings['country_code'] = $params['countryCode'];
+        }
+        if (isset($params['retrieveGender'])) {
+            $settings['retrieve_gender'] = $params['retrieveGender'];
         }
         if (!empty($params['webhook'])) {
             $settings['webhook'] = $params['webhook'];
@@ -120,6 +128,9 @@ class EmailFinder
         $settings = [];
         if (!empty($params['countryCode'])) {
             $settings['country_code'] = $params['countryCode'];
+        }
+        if (isset($params['retrieveGender'])) {
+            $settings['retrieve_gender'] = $params['retrieveGender'];
         }
         if (!empty($params['webhook'])) {
             $settings['webhook'] = $params['webhook'];

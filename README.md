@@ -94,7 +94,7 @@ Paid plans start at **$17/mo** for 1,000 emails up to **$497/mo** for 100,000 em
 ## Documentation
 
 - [Enrow API documentation](https://docs.enrow.io)
-- [Full Enrow SDK](https://github.com/EnrowAPI/enrow-php) -- includes email verifier, phone finder, reverse email lookup, and more
+- [Full Enrow SDK](https://github.com/EnrowAPI/enrow-php) -- includes email verifier, phone finderand more
 
 ## License
 
